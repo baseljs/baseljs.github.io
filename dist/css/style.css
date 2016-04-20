@@ -2,6 +2,11 @@
 	background: #1976D2 !important;
 	color: white;
 }
+
+.bg-white{
+	background: white;
+}
+
 .console{
 	background: #001C2A;
 	color: white;
@@ -12,3 +17,4 @@
 	font-size: 19px;
 	margin: 10px 0 10px;
 }
+
