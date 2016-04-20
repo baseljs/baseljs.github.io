@@ -28,3 +28,16 @@
 	margin: 10px 0 10px;
 }
 
+.social-link{
+	padding: 5px 13px;
+	font-size: 40px;
+	border-radius: 50%;
+	background: #1976D2;
+	color: white;
+	text-decoration: none;
+}
+
+.social-link:hover{
+	text-decoration: none;
+	color: white;	
+}
