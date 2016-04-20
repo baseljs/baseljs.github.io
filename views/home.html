@@ -18,7 +18,7 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-4">
-              <h3>LATEST RELEASE:<br> {{latest.name}}</h3> 
+              <h3>LATEST RELEASE:<br> {{latest.tag_name}}</h3> 
             </div>
             <div class="col-md-4">
               <h3>LATEST COMMIT:<br> {{repo.latest_commit}}</h3>
@@ -32,12 +32,12 @@
       </div>
     </div>
   </section>
-  <section class="bg-white">
+  <section class="bg-white box-shadow">
     <div class="container">
       <br>
       <div class="row">
-        <div class="col-md-12">
-          <h1><strong>BASEL</strong> stands for:</h1>
+        <div class="col-md-12 text-center">
+          <h1><strong>BASEL</strong> stands for</h1>
         </div>
       </div>
       <br>
@@ -66,6 +66,41 @@
       <hr>
     </div>
     <br>
+  </section>
+  <section class="bg-gray">
+    <div class="container">
+      <br>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Cross plataform</h1>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="circle bg-aqua">
+            <i class="fa fa-windows"></i>
+          </div>
+          <h2>Windows</h2>
+          <p>Windows 7 and later are supported, older operating systems are not supported (and do not work).</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="circle bg-aqua">
+            <i class="fa fa-linux"></i>
+          </div>
+          <h2>Linux</h2>
+          <p>Ubuntu 12.04 and later, Fedora 21 and Debian 8.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="circle bg-aqua">
+            <i class="fa fa-apple"></i>
+          </div>
+          <h2>Mac OS</h2>
+          <p>OS X 10.9 or later. Only 64bit.</p>
+        </div>
+      </div>
+      <br>
+    </div>
   </section>
 </div><!-- /.content-wrapper -->
 <div ng-include="'views/footer.html'"></div>

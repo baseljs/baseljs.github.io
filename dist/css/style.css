@@ -7,6 +7,16 @@
 	background: white;
 }
 
+.circle{
+	padding: 20px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 45px;
+	margin: 0 auto;
+}
+
 .console{
 	background: #001C2A;
 	color: white;
