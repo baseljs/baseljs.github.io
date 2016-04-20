@@ -1,0 +1,14 @@
+.bg-basel{
+	background: #1976D2 !important;
+	color: white;
+}
+.console{
+	background: #001C2A;
+	color: white;
+	opacity: 0.6;
+	padding: 20px;
+	width: 400px;
+	font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+	font-size: 19px;
+	margin: 10px;
+}
