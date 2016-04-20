@@ -1,27 +1,39 @@
 <div ng-include="'views/header.html'"></div>
- <div class="content-wrapper">
+ <div class="content-wrapper" ng-init="init()">
   <section class="content-header bg-basel">
     <div class="container">
       <h1>Framework for built app with Bootstrap, AngularJS, SQLite and Electron.</h1>
-      <h3>Lorem ipsum - Framework for built app with Bootstrap, AngularJS, SQLite and Electron.</h3>
+      <h3>Create cross-platform applications using web technologies like HTML, CSS and JavaScript..</h3>
       <br>
       <br>
       <br>
       <h3>Get <strong>BASEL</strong>, start a app...</h3>
-      <div class="console">
-        $ sudo npm install -g basel<br/>
-        $ basel-init newApp
+      <div class="row">
+        <div class="col-md-4">
+          <div class="console">
+            $ sudo npm install -g basel<br/>
+            $ basel-init newApp
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>LATEST RELEASE:<br> {{latest.name}}</h3> 
+            </div>
+            <div class="col-md-4">
+              <h3>LATEST COMMIT:<br> {{repo.latest_commit}}</h3>
+            </div>
+            <div class="col-md-4">
+              <h3>FORKS:<br> {{repo.forks_count}}</h3>
+              <p><a href="https://github.com/baseljs/basel" target="_blank"><span class="label label-info"><i class="fa fa-github"></i> Fork me</span></a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <div class="container">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-    </section>
+  <section class="bg-basel2">
 
-    <!-- Main content -->
-    <section class="content">
-    </section><!-- /.content -->
-  </div><!-- /.container -->
+  </section>
 </div><!-- /.content-wrapper -->
 <div ng-include="'views/footer.html'"></div>
