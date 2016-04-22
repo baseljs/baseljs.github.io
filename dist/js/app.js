@@ -30,6 +30,7 @@ app.config(function($routeProvider){
 app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 	var ngProgress = ngProgressFactory.createInstance();
 	$rootScope.$on('$routeChangeStart', function() {
+		ngProgress.setColor('blue');
 	    ngProgress.start();
 	});
 
