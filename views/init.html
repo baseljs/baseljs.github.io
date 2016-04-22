@@ -16,8 +16,8 @@
 				<div class="col-md-12">
 					<div class="box box-primary">
 						<div class="box-body">
-							<h2><strong>basel-init</strong></h2>
-							<p>To init a new BASEL app, you just have to execute <strong>basel-init</strong>. The first parameter is the app name, and the name of the folder of the app too.</p>
+							<h2 id="name"><strong>basel-init</strong></h2>
+							<p>To init a new BASEL app, you just have to execute <strong>basel-init</strong>. The first parameter is the <strong>app name</strong>, and the name of the folder of the app too.</p>
 							<div class="console">
 								$ basel-init newApp<br>
 							</div>
@@ -33,6 +33,7 @@
 										<th>Name</th>
 										<th>Short</th>
 										<th>Long</th>
+										<th>Default value</th>
 										<th>Description</th>
 									</tr>
 								</thead>
@@ -43,6 +44,7 @@
 										</td>
 										<td>-d</td>
 										<td>--database</td>
+										<td>database</td>
 										<td>Database name</td>
 									</tr>
 									<tr>
@@ -51,9 +53,54 @@
 										</td>
 										<td>-c</td>
 										<td>--cipher</td>
+										<td>false</td>
 										<td>For use encrypted database</td>
 									</tr>
-
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('algorithm')" >Algorithm</a>
+										</td>
+										<td>-a</td>
+										<td>--algorithm</td>
+										<td>aes-256-ctr</td>
+										<td>Algorithm for use encrypted database</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('password')" >Password</a>
+										</td>
+										<td>-p</td>
+										<td>--password</td>
+										<td></td>
+										<td>Password for use encrypted database</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('title')" >Title</a>
+										</td>
+										<td>-t</td>
+										<td>--title</td>
+										<td>The app <a href="" ng-click="gotoAnchor('name')">name</a></td>
+										<td>Application Title</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('description')" >Description</a>
+										</td>
+										<td>-e</td>
+										<td>--description</td>
+										<td>BASEL Application</td>
+										<td>Application Description</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('url')" >Url</a>
+										</td>
+										<td>-u</td>
+										<td>--url</td>
+										<td></td>
+										<td>URL of Git repository</td>
+									</tr>
 								</tbody>
 							</table>
 							<hr>
@@ -87,9 +134,63 @@
 								</div>
 								<p>The console will ask you the <strong>algorithm</strong> used to encrypt, and the <strong>passowrd</strong></p>
 							</div>
-
 							<!-- /. Cipher -->
-							
+							<hr>
+							<!-- Algorithm -->
+							<div id="algorithm">
+								<h3>Algorithm <small><a href="" ng-click="gotoAnchor('algorithm')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>To inform the algorithm used to encrypt or decrypt the database use <strong>-a</strong> or <strong>--algorithm</strong>.</p>
+								<p><a href="https://github.com/jayralencar/sqlite-cipher.js#algorithm-list" target="blank">Look</a> the list of algorithms that you can use.</p>
+								<div class="console">
+									$ basel-init myApp -d dbName -c -a aes-256-ctr<br>
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<!-- /. Algorithm -->
+							<hr>
+							<!-- Password -->
+							<div id="password">
+								<h3>Password <small><a href="" ng-click="gotoAnchor('passowrd')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>Chose the password to encrypt and decrypt your database file. For inform it type <strong>-p</strong> or <strong>--password</strong></p>
+								<div class="console">
+									$ basel-init myApp -d dbName -c -p yourPassWord<br>
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<!-- /. Password -->
+							<hr>
+							<!-- Title -->
+							<div id="title">
+								<h3>Title <small><a href="" ng-click="gotoAnchor('title')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>The title that will appear in the window of your application. For inform it use <strong>-t</strong> or <strong>--title</strong></p>
+								<div class="console">
+									$ basel-init myApp -t "My Title" // or --title<br>
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<!-- /. Title -->
+							<hr>
+							<!-- Description -->
+							<div id="description">
+								<h3>Description <small><a href="" ng-click="gotoAnchor('description')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>The Description of your App in <strong>package.json</strong> and <strong>basel.json</strong>. Use with <strong>-e</strong> or <strong>--description</strong></p>
+								<div class="console">
+									$ basel-init myApp -e "This is my first BASEL app" // or --description<br>
+								</div>
+							</div>
+							<!-- /. Description -->
+							<hr>
+							<!-- Url -->
+							<div id="url">
+								<h3>Url <small><a href="" ng-click="gotoAnchor('url')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can create your app based in a repository Git. This <strong>base-app</strong> needs to have the basic structure of the BASEL. Use with <strong>-u</strong> or <strong>--url</strong></p>
+								<div class="console">
+									$ basel-init myApp -u "https://github.com/baseljs/basel-app" // or --url<br>
+								</div>
+							</div>
+							<!-- /. Url -->
+							<hr>
+							<a href="#/documentation"><h4>Keep going</h4></a>
 						</div><!-- /.box-body -->
 					</div>
 				</div>
