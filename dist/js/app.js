@@ -1,4 +1,4 @@
-var app = angular.module("basel", ["ngRoute"]);
+var app = angular.module("basel", ["ngRoute",'ngProgress']);
 
 app.config(function($routeProvider){
 	$routeProvider.when("/", {
@@ -18,4 +18,16 @@ app.config(function($routeProvider){
 		templateUrl : "views/instalation.html"
 	})
 	;
+});
+
+app.run(function($rootScope, ngProgressFactory) {
+	var ngProgress = ngProgressFactory.createInstance();
+  $rootScope.$on('$routeChangeStart', function() {
+    ngProgress.start();
+  });
+
+  $rootScope.$on('$routeChangeSuccess', function() {
+    ngProgress.complete();
+  });
+  // Do the same with $routeChangeError
 });
