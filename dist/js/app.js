@@ -7,5 +7,9 @@ app.config(function($routeProvider){
 	})
 	.when('/prerequisites',{
 		templateUrl : "views/prerequisites.html"
-	});
+	})
+	.when('/plataforms',{
+		templateUrl : "views/plataforms.html"
+	})
+	;
 });
