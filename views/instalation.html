@@ -1,0 +1,35 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" >
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				Instalation
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">Installation</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<p>Install the <strong>BASEL</strong> package from NPM. This will add the <i>BASEL</i> command which lets you interact (install, manage, update …) your BASEL based application</p>
+							<h3>Install package</h3>
+							Before to install see the <a href="#/prerequisites">Prerequisite Technologies</a>.
+							<div class="console">
+								$ sudo npm install -g basel<br/>
+								$ basel-init newApp<br>
+								$ cd newApp && npm install
+							</div>
+							<p>The command <strong>basel-init</strong> will init a new BASEL application.</p>
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>
