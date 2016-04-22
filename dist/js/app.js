@@ -3,23 +3,29 @@ var app = angular.module("basel", ["ngRoute",'ngProgress']);
 app.config(function($routeProvider){
 	$routeProvider.when("/", {
 		templateUrl : "views/home.html",
-		controller : "homeController"
+		controller : "homeController",
+		title: "BASEL - Bootstrap, Angular, SQLite and ELectron"
 	})
 	.when('/documentation',{
-		templateUrl : "views/documentation.html"
+		templateUrl : "views/documentation.html",
+		title: "BASEL - Full Documentation"
 	})
 	.when('/prerequisites',{
-		templateUrl : "views/prerequisites.html"
+		templateUrl : "views/prerequisites.html",
+		title : "BASEL - Prerequisite Technologies"
 	})
 	.when('/plataforms',{
-		templateUrl : "views/plataforms.html"
+		templateUrl : "views/plataforms.html",
+		title: "Supported Platforms"
 	})
 	.when('/instalation',{
-		templateUrl : "views/instalation.html"
+		templateUrl : "views/instalation.html",
+		title : "BASEL - Instalation"
 	})
 	.when('/init',{
 		templateUrl : "views/init.html",
-		controller : "documentationController"
+		controller : "documentationController",
+		title: "BASEL - Init a App"
 	})
 	.otherwise({
         redirectTo: "/"
@@ -34,7 +40,8 @@ app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 	    ngProgress.start();
 	});
 
-	$rootScope.$on('$routeChangeSuccess', function() {
+	$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
+		$rootScope.title = current.$$route.title;
 	    ngProgress.complete();
 	});
 });
