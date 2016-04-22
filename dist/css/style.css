@@ -62,3 +62,11 @@
 ol{
 	font-size: 20px;
 }
+
+ol li ul li{
+	font-size: 18px;
+}
+
+.box-body{
+	font-size: 16px;
+}

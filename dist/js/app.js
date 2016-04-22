@@ -3,7 +3,7 @@ var app = angular.module("basel", ["ngRoute",'ngProgress']);
 app.config(function($routeProvider){
 	$routeProvider.when("/", {
 		templateUrl : "views/home.html",
-		controller: "homeController"
+		controller : "homeController"
 	})
 	.when('/documentation',{
 		templateUrl : "views/documentation.html"
@@ -17,17 +17,27 @@ app.config(function($routeProvider){
 	.when('/instalation',{
 		templateUrl : "views/instalation.html"
 	})
+	.when('/init',{
+		templateUrl : "views/init.html",
+		controller : "documentationController"
+	})
+	.otherwise({
+        redirectTo: "/"
+    });
 	;
 });
 
-app.run(function($rootScope, ngProgressFactory) {
+app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 	var ngProgress = ngProgressFactory.createInstance();
-  $rootScope.$on('$routeChangeStart', function() {
-    ngProgress.start();
-  });
+	$rootScope.$on('$routeChangeStart', function() {
+	    ngProgress.start();
+	});
 
-  $rootScope.$on('$routeChangeSuccess', function() {
-    ngProgress.complete();
-  });
-  // Do the same with $routeChangeError
+	$rootScope.$on('$routeChangeSuccess', function() {
+	    ngProgress.complete();
+	});
 });
+
+app.run(['$anchorScroll', function($anchorScroll) {
+ 	$anchorScroll.yOffset = 50;   // always scroll by 50 extra pixels
+}])

@@ -1,0 +1,100 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" ng-init="init()">
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				Init App
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">Init App</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<h2><strong>basel-init</strong></h2>
+							<p>To init a new BASEL app, you just have to execute <strong>basel-init</strong>. The first parameter is the app name, and the name of the folder of the app too.</p>
+							<div class="console">
+								$ basel-init newApp<br>
+							</div>
+							<p>
+								In the above example, the repository of the most basic BASEL application is cloned is a folder named <strong>newApp</strong>.
+							</p>
+							<hr>
+							<h2><strong>Options</strong></h2>
+							<p>You can use options in the initialization of your app, look:</p>
+							<table class="table table-responsive">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Short</th>
+										<th>Long</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('database')" >Database</a>
+										</td>
+										<td>-d</td>
+										<td>--database</td>
+										<td>Database name</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('cipher')" >Cipher</a>
+										</td>
+										<td>-c</td>
+										<td>--cipher</td>
+										<td>For use encrypted database</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<hr>
+							<!-- Database -->
+							<div id="database">
+								<h3>Database <small><a href="" ng-click="gotoAnchor('database')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can inform the <strong>name</strong> of the database or the <strong>file path</strong>.</p>
+								<p>
+									<ul>
+										<li>If you inform just the <strong>name</strong>, BASEL will create a file with the informed in the folder called <strong>model</strong> of your app.</li>
+										<li>And, if you inform the <strong>file path</strong>, BASEL will connect him and save the reference in <strong>basel.json</strong>.</li>
+									</ul>
+								</p>
+								<div class="console">
+									$ basel-init myApp -d dbName<br>
+									//or file path<br>
+									$ basel-init myApp -d "~/path/file.db"
+								</div>
+								<p>If the file dont exists, BASEL will create the file. But, if the path dont exists, It will show an error.</p>
+							</div>
+							<!-- /. Database -->
+							<hr>
+
+							<!-- Cipher -->
+
+							<div id="cipher">
+								<h3>Cipher <small><a href="" ng-click="gotoAnchor('cipher')"><i class="fa fa-link"></i></a></small> </h3>
+								<p><strong>BASEL</strong> uses <a href="https://github.com/jayralencar/sqlite-cipher.js" targe="_blank">sqlite-cipher.js</a> to handle encrypted databases. To do it you just have to use <strong>-c</strong> or <strong>--cipher</strong>.</p>
+								<div class="console">
+									$ basel-init myApp -d dbName -c //or --cipher<br>
+								</div>
+								<p>The console will ask you the <strong>algorithm</strong> used to encrypt, and the <strong>passowrd</strong></p>
+							</div>
+
+							<!-- /. Cipher -->
+							
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>
