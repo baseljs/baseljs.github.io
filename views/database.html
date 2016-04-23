@@ -1,0 +1,175 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" ng-init="init()">
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				Database handle
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">Database handle</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<h2><strong>basel-database</strong></h2>
+							<p><strong>BASEL</strong> can connect with databases, encrypted or not. For it are used two packages: <a href="https://github.com/jayralencar/sqlite-sync.js" target="_blank">sqlite-sync.js</a> and <a href="https://github.com/jayralencar/sqlite-cipher.js" target="_blank">sqlite-cipher.js</a>. The last to connect to encrypted databases, and create them.</p>
+							<hr>
+							<p><strong>basel-database</strong> has two basic functions:</p>
+							<ul>
+								<li><a href="" ng-click="gotoAnchor('statements')">Execute <strong>SQL</strong> statements; and</a></li>
+								<li><a href="" ng-click="gotoAnchor('tables')">Create database tables.</a></li>
+							</ul>
+							<hr>
+							<div id="statements">
+								<h3>Statements <small><a href="" ng-click="gotoAnchor('statements')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can run SQL just executing the option <strong>--sql</strong> or simply <strong>-s</strong>. Look:</p>
+								<div class="console">
+									$ basel-database -sql "INSERT INTO users (name, email) VALUES ('Jayr','jayr@basel.io')"<br>
+									//or<br>
+									$ basel-database -sql "SELECT * FROM users"<br>
+								</div>
+								<p>You can use <strong>INSERT, CREATE, DELETE, UPDATE, SELECT</strong> and <strong>PRAGMA statements</strong>.</p>
+							</div>
+							<hr>
+							<div id="tables">
+								<h3>Create Tables <small><a href="" ng-click="gotoAnchor('tables')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can create tables using <strong>-t</strong> or <strong>--table</strong> followed by table name. And to help you <strong>basel-database</strong> has:</p>
+								<table class="table table-responsive">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Short</th>
+											<th>Long</th>
+											<th>Default value</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<a href="" ng-click="gotoAnchor('columns')" >Columns</a>
+											</td>
+											<td>-c</td>
+											<td>--columns</td>
+											<td></td>
+											<td>Table columns</td>
+										</tr>
+										<tr>
+											<td>
+												<a href="" ng-click="gotoAnchor('pk')" >Primary Key</a>
+											</td>
+											<td>-p</td>
+											<td>--pk</td>
+											<td></td>
+											<td>Table primary key</td>
+										</tr>
+										<tr>
+											<td>
+												<a href="" ng-click="gotoAnchor('incremental')" >Incremental columns</a>
+											</td>
+											<td>-i</td>
+											<td>--incremental</td>
+											<td></td>
+											<td>To inform auto incremental columns of table</td>
+										</tr>
+										<tr>
+											<td>
+												<a href="" ng-click="gotoAnchor('references')" >References</a>
+											</td>
+											<td>-r</td>
+											<td>--references</td>
+											<td></td>
+											<td>References of table, foreign key.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<hr>
+							<div id="columns">
+								<h4><strong>Informing Columns</strong> <small><a href="" ng-click="gotoAnchor('columns')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>To inform the columns of table use <strong>-c</strong> or <strong>--columns</strong>.</p>
+								<p>Use quotes and put the columns like a JSON object. Look</p>
+								<div class="console">
+									$ basel-database -t users -c "id: INTEGER, name:CHAR(50), password:CHAR(20)"
+								</div>
+								<p>Use the datatypes of <a href="https://www.sqlite.org/datatype3.html" target="_blank"> SQLite version 3</a>.</p>
+								<p>The above example is like:</p>
+								<div class="console">
+									CREATE TABLE users(<br>
+										&thinsp;&thinsp;id INTEGER,<br>
+										&thinsp;&thinsp;name CHAR(50),<br>
+										&thinsp;&thinsp;password CHAR(20)<br>
+									);
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<hr>
+							<div id="pk">
+								<h4><strong>Primary Key</strong> <small><a href="" ng-click="gotoAnchor('columns')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>To inform the <strong>Primary Key</strong> of you table, use <strong>-p</strong> or <strong>--pk</strong>. Obviously, you need to inform the columns also.</p>
+								<div class="console">
+									$ basel-database -t users -c "id: INTEGER, name:CHAR(50), password:CHAR(20)" --pk id
+								</div>
+								<p>With the directive, you have to inform the column which will be the primary key. Only one.	</p>
+								<p>The above example is like:</p>
+								<div class="console">
+									CREATE TABLE users(<br>
+										&thinsp;&thinsp;id INTEGER PRIMARY KEY,<br>
+										&thinsp;&thinsp;name CHAR(50),<br>
+										&thinsp;&thinsp;password CHAR(20)<br>
+									);
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<hr>	
+							<div id="incremental">
+								<h4><strong>Informing Incremental columns</strong> <small><a href="" ng-click="gotoAnchor('incremental')"><i class="fa fa-link"></i></a></small> </h4>	
+								<p>To inform the auto incremental fields of your table, use <strong>-i</strong> and <strong>--incremental</strong></p>
+								<div class="console">
+									$ basel-database -t users -c "id: INTEGER, name:CHAR(50)" --pk id --incremental id
+								</div>
+								<p>You can enter one or more columns. If more, use quotes,like <strong>"id, other, ..."</strong></p>
+								<p>The above example is like:</p>
+								<div class="console">
+									CREATE TABLE users(<br>
+										&thinsp;&thinsp;id INTEGER PRIMARY KEY <strong>AUTOINCREMENT</strong>,<br>
+										&thinsp;&thinsp;name CHAR(50)<br>
+									);
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<hr>	
+							<div id="references">
+								<h4><strong>Informing References (foreign keys)</strong> <small><a href="" ng-click="gotoAnchor('references')"><i class="fa fa-link"></i></a></small> </h4>	
+								<p>To inform the references or foreign keys of your table, use <strong>-r</strong> or <strong>--references</strong></p>
+								<p>Like in the columns, you have to inform the references in a string like a JSON object.</p>
+								<div class="console" style="font-size:15px">
+									$ basel-database -t users -c "id: INTEGER, name:CHAR(50), id_profile:INTEGER" --pk id --i id -r "id_profile:profiles.id"
+								</div>
+								<p>Look: <strong>"id_profile:profiles.id"</strong>.</p>
+								<p><strong>id_profile</strong> is the field of your new table; <strong>profiles</strong> is the referenced table; and <strong>id</strong> is the referenced field of the table <strong>profiles</strong>.</p>
+								<p>The above example is like:</p>
+								<div class="console">
+									CREATE TABLE users(<br>
+										&thinsp;&thinsp;id INTEGER PRIMARY KEY <strong>AUTOINCREMENT</strong>,<br>
+										&thinsp;&thinsp;name CHAR(50),<br>
+										&thinsp;&thinsp;id_profile INTERGER REFERENCES profiles(id)<br>
+									);
+								</div>
+								<p>If you dont inform this value, the console will <strong>NOT</strong> ask you.</p>
+								<hr>
+								<a href="#/documentation"><h4>Keep going</h4></a>
+							</div>
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>

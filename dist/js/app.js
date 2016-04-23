@@ -20,12 +20,17 @@ app.config(function($routeProvider){
 	})
 	.when('/instalation',{
 		templateUrl : "views/instalation.html",
-		title : "BASEL - Instalation"
+		title : "BASEL - Installation"
 	})
 	.when('/init',{
 		templateUrl : "views/init.html",
 		controller : "documentationController",
 		title: "BASEL - Init a App"
+	})
+	.when('/database',{
+		templateUrl : "views/database.html",
+		controller : "documentationController",
+		title: "BASEL - Database handle "
 	})
 	.otherwise({
         redirectTo: "/"
