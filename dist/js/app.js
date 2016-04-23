@@ -46,7 +46,7 @@ app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 	});
 
 	$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
-		$rootScope.title = current.$$route.title;
+		document.title = current.$$route.title;
 	    ngProgress.complete();
 	});
 });
