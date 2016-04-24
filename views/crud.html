@@ -1,0 +1,141 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" ng-init="init()">
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				CRUD maker
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">CRUD maker</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<h2><strong>basel-crud</strong></h2>
+							<p><strong>BASEL</strong> can create and manage CRUDs (Create, Read, Update e Delete) using <a href="https://angularjs.org/" target="_blank">AngularJS</a> to create views and controllers, based in <a href="#" target="_blank">templates</a>, natives or from <a href="#">themes</a>.</p>
+							<hr>
+							<p><strong>basel-crud</strong> create CRUDs based in <a href="#/database">database</a> tables.</p>
+							<h3><strong>Basic Options</strong> <small><a href="" ng-click="gotoAnchor('basic-options')"><i class="fa fa-link"></i></a></small> </h3>
+							<p>You can use some options in creating CRUDs. These are the basic:</p>
+							<table class="table table-responsive">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Short</th>
+										<th>Long</th>
+										<th>Default value</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('name')" >CRUD Name</a>
+										</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>Name of your new CRUD</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('table')" >Table</a>
+										</td>
+										<td>-t</td>
+										<td>--table</td>
+										<td></td>
+										<td>The database table data on which your CRUD will be based.</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('controller')" >Controller</a>
+										</td>
+										<td>-c</td>
+										<td>--controller</td>
+										<td>
+											CRUD name in lowercase, without accents and spaces. Concatenated with "Controller".
+										</td>
+										<td>Controller name</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('view')" >View</a>
+										</td>
+										<td>-v</td>
+										<td>--view</td>
+										<td>CRUD name in lowercase, without accents and spaces. (.html)</td>
+										<td>View name (*.html)</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('route')" >Route</a>
+										</td>
+										<td>-r</td>
+										<td>--route</td>
+										<td>CRUD name in lowercase, without accents and spaces</td>
+										<td>The route (Ex.: persons)</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('menu')" >Menu</a>
+										</td>
+										<td>-m</td>
+										<td>--menu</td>
+										<td>1</td>
+										<td>Show in main menu (1 - Yes, 0 - No)</td>
+									</tr>
+								</tbody>
+							</table>
+							<hr>
+							<div id="name">
+								<h4><strong>CRUD name</strong> <small><a href="" ng-click="gotoAnchor('name')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>The name of your CRUD is the most important part of it. It can be used in the view and controller name, if you dont enter them.</p>
+								<p>The name is just entered after the <strong>basel-crud</strong> argument.</p>
+								<div class="console">
+									$ basel-crud myCrud
+								</div>
+							</div>
+							<hr>
+							<div id="table">
+								<h4><strong>Table</strong> <small><a href="" ng-click="gotoAnchor('table')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>You have to enter the name of a database table. Look how to create table <a href="#/database#tables" target="_blank">here</a>.</p>
+								<p>Use <strong>-t</strong> or <strong>--table</strong> to enter the table name.</p>
+								<div class="console">
+									$ basel-crud myCrud -t tableName
+								</div>
+								<p>You can create the table at the same time. <a href="#">Look</a></p>
+								<p class="text-danger">If the table dont exists, the app will ask you the <strong>columns</strong>, the <strong>primary key</strong> and if you have a <strong>auto incremental</strong> column.</p>
+							</div>	
+							<hr>
+							<div id="controller">
+								<h4><strong>Controller</strong> <small><a href="" ng-click="gotoAnchor('table')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>To inform the controller name, use <strong>-c</strong> or <strong>--controller</strong> </p>
+								<div class="console">
+									$ basel-crud myCrud -t tableName -c myController
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+								<h4 class="text-danger">Never use the name <strong>mainController</strong>.</h4>
+							</div>
+							<hr>
+							<div id="view">
+								<h4><strong>View</strong> <small><a href="" ng-click="gotoAnchor('view')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>To inform the view name, use <strong>-v</strong> or <strong>--view</strong></p>
+								<p class="text-danger">Remember to always use</p>
+								<div class="console">
+									$ basel-crud myCrud -t tableName -c myController -v myView.html
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>
