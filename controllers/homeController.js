@@ -13,7 +13,7 @@ app.controller("homeController", function($scope, $location, githubService, npmS
 			$scope.npm = data;
 		});
 		facebookService.get().then(function(data){
-
+			console.log(data)
 		})
 	}
 });
