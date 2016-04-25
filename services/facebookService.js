@@ -1,21 +1,24 @@
 "use strict";
 app.factory("facebookService", function($http, $q){
 	var get = function(){
-		return $http.get('https://graph.facebook.com/v2.3/1729814457236827?fields=likes&access_token=EAACEdEose0cBADeJ1xhRuyxuvBMRrWvLhpaeK7lUUk5RqUD2IMa7p1dNWnl4ZCRClU57ovD4JIMgLkNuBZCOr12uY9tD5YGyN332WoFqZBGRYX4PamnWZCJ0WZC8VAc6nwVwhBQjYIljK5BHembZADYAhFqnRIVjGySHCEWysYJgZDZD');
+		return $http.get('https://graph.facebook.com/v2.3/1729814457236827?fields=likes&access_token=215280912186066|2m1TrZ6Mt_he_PHqNqIdi9R-y7k');
 	}
 	var get2 = function(){
 		var deferred = $q.defer();
-        FB.api('/baselfwk', {
-            fields: 'likes'
-        }, function(response) {
-        	console.log(response)
-            if (!response || response.error) {
-                deferred.reject('Error occured');
-            } else {
-                deferred.resolve(response);
-            }
-        });
-        return deferred.promise;
+		FB.api(
+			'/baselfwk',
+			'GET',
+			{"fields":"fan_count"},
+			function(response) {
+				console.log(response)
+				if (!response || response.error) {
+					deferred.reject('Error occured');
+				} else {
+					deferred.resolve(response);
+				}
+			}
+			);
+		return deferred.promise;
 	}
 	return {
 		get : get,
