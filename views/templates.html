@@ -1,0 +1,91 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" ng-init="init()">
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				Templates
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">Templates</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<p><strong>BASEL</strong> suports templates to <strong>views</strong> and <strong>controller</strong> files.</p>
+							<hr/>
+							<div id="views">
+								<h3>Templates for views <small><a href="" ng-click="gotoAnchor('views')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>The <a href="https://github.com/baseljs/basel/blob/master/templates/crud.html">standard model</a> for views has: <strong>New button</strong>, <strong>Table to list</strong>, <strong>Search input</strong> and <strong>Form to create and update</strong>.</p>
+								<p>To create your own templates you have to use the class <strong>basel-table-head</strong> in the head of your table <strong>thead</strong>, and the class <strong>basel-table-body</strong> in the tag <strong>tbody</strong>. Look:</p>
+								<div class="console">
+									&lt;table class="table table-striped" ng-init="list()"&gt;<br>
+									&thinsp;&thinsp;&lt;thead class="basel-table-head"&gt;<br>
+									&thinsp;&thinsp;&lt;/thead&gt;<br>
+									&thinsp;&thinsp;&lt;tbody class="basel-table-body"&gt;<br>
+									&thinsp;&thinsp;&lt;/tbody&gt;<br>
+									&lt;/table&gt;<br>
+								</div>
+								<p>And use the functions references from controller, like <strong>ng-init="list()"</strong> in the above example.</p>
+								<p>Save your template file with the name <strong>crud.html</strong> in the folder <strong>templates</strong> of yout theme or app.</p>
+							</div>
+							<hr>
+							<div id="controllers">
+								<h3>Templates for controllers <small><a href="" ng-click="gotoAnchor('controllers')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>In the template file to controllers you have to use some key words:</p>
+								<table class="table">
+									<tbody>
+										<tr>
+											<td>CONTROLLER_NAME</td>
+											<td>It will be replaced by the <a href="#/crud#controller">name of your controller</a>.</td>
+										</tr>
+										<tr>
+											<td>TABLE_NAME</td>
+											<td>It will be replaced by the database table name.</td>
+										</tr>
+										<tr>
+											<td>PRIMARY_KEY</td>
+											<td>It will be replaced by the primary key of your database table.</td>
+										</tr>
+									</tbody>
+								</table>
+								<hr>
+								<p>The <strong>basic options</strong> of a <strong>BASEL</strong> controller are:</p>
+								<table class="table">
+									<tbody>
+										<tr>
+											<td>list()</td>
+											<td>To list records</a>.</td>
+										</tr>
+										<tr>
+											<td>save()</td>
+											<td>To save records. (create and update)</a>.</td>
+										</tr>
+										<tr>
+											<td>cancel()</td>
+											<td>To cancel edition.</a>.</td>
+										</tr>
+										<tr>
+											<td>edit()</td>
+											<td>To open form to edit record</a>.</td>
+										</tr>
+										<tr>
+											<td>delete()</td>
+											<td>To delete records</a>.</td>
+										</tr>
+									</tbody>
+								</table>
+								<p>See an <a href="https://github.com/baseljs/basel-app/blob/master/templates/controller.js">example</a></p>
+							</div>
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>

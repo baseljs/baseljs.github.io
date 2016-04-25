@@ -37,6 +37,11 @@ app.config(function($routeProvider){
 		controller : "documentationController",
 		title: "BASEL - CRUD maker"
 	})
+	.when('/templates',{
+		templateUrl : "views/templates.html",
+		controller : "documentationController",
+		title: "BASEL - Templates"
+	})
 	.otherwise({
         redirectTo: "/"
     });

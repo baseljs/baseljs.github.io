@@ -26,6 +26,8 @@
 	font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 	font-size: 19px;
 	margin: 10px 0 10px;
+	overflow-x: auto;
+	white-space:nowrap;
 }
 
 .social-link{
