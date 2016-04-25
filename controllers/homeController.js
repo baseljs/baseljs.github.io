@@ -12,8 +12,8 @@ app.controller("homeController", function($scope, $location, githubService, npmS
 		npmService.get().success(function(data){
 			$scope.npm = data;
 		});
-		facebookService.get().then(function(data){
-			console.log(data)
+		facebookService.get().success(function(data){
+			$scope.facebook = data;
 		})
 	}
 });

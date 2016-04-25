@@ -64,8 +64,7 @@ window.fbAsyncInit = function() {
     FB.init({
       appId      : '215280912186066',
       xfbml      : true,
-      version    : 'v2.0',
-      secrete	 : '215280912186066|2m1TrZ6Mt_he_PHqNqIdi9R-y7k'
+      version    : 'v2.3'
     });
 };
 
