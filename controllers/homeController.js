@@ -15,15 +15,5 @@ app.controller("homeController", function($scope, $location, githubService, npmS
 		facebookService.get().success(function(data){
 			$scope.facebook = data;
 		});
-		facebookService.get2().then(function(response) {
-      		console.log(response)
-     	});
-
-     	FB.api('/me', function(res) {
-
-    		console.log(res)
-
-    	});
-
 	}
 });

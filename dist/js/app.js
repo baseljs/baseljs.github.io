@@ -68,3 +68,4 @@ app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 app.run(['$anchorScroll', function($anchorScroll) {
  	$anchorScroll.yOffset = 80;   // always scroll by 50 extra pixels
 }]);
+
