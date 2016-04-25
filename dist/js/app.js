@@ -42,6 +42,10 @@ app.config(function($routeProvider){
 		controller : "documentationController",
 		title: "BASEL - Templates"
 	})
+	.when('/contact',{
+		templateUrl : "views/contact.html",
+		title: "BASEL - Contact"
+	})
 	.otherwise({
         redirectTo: "/"
     });
@@ -64,19 +68,3 @@ app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 app.run(['$anchorScroll', function($anchorScroll) {
  	$anchorScroll.yOffset = 80;   // always scroll by 50 extra pixels
 }]);
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '215280912186066',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-};
-
-(function(d, s, id){
-	 var js, fjs = d.getElementsByTagName(s)[0];
-	 if (d.getElementById(id)) {return;}
-	 js = d.createElement(s); js.id = id;
-	 js.src = "//connect.facebook.net/en_US/sdk.js";
-	 fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
