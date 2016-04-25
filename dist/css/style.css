@@ -70,3 +70,8 @@ ol li ul li{
 .box-body{
 	font-size: 16px;
 }
+
+.samall-for-blue{
+	color: white;
+	font-size: 16px !important; 
+}

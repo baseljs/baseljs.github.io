@@ -37,6 +37,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+  <!-- facebook SDK -->
+  <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+
   <!-- Angular -->
   <script type="text/javascript" src="dist/angular/angular.js"></script>
   <script type="text/javascript" src="dist/angular/angular-route.js"></script>
@@ -49,6 +52,8 @@
 
    <!-- Services -->
   <script type="text/javascript" src="services/githubService.js"></script>
+  <script type="text/javascript" src="services/npmService.js"></script>
+  <script type="text/javascript" src="services/facebookService.js"></script>
 
   <!-- Controllers -->
   <script type="text/javascript" src="controllers/homeController.js"></script>
@@ -70,6 +75,7 @@
   </head>
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-black layout-top-nav">
+    <div id="fb-root"></div>
     <div class="wrapper" ng-view="">
     </div><!-- ./wrapper -->
 

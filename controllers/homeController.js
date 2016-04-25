@@ -1,5 +1,5 @@
 "use strict";
-app.controller("homeController", function($scope, $location, githubService){
+app.controller("homeController", function($scope, $location, githubService, npmService, facebookService){
 	$scope.init = function(){
 		githubService.repo().success(function(data){
 			$scope.repo = data;
@@ -9,5 +9,11 @@ app.controller("homeController", function($scope, $location, githubService){
 			$scope.releases = data;
 			$scope.latest = data[0];
 		});
+		npmService.get().success(function(data){
+			$scope.npm = data;
+		});
+		facebookService.get().then(function(data){
+
+		})
 	}
 });
