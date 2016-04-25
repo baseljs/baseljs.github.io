@@ -131,6 +131,29 @@
 								</div>
 								<p>If you dont inform this value, the console will ask you.</p>
 							</div>
+							<hr>
+							<div id="route">
+								<h4><strong>Route</strong> <small><a href="" ng-click="gotoAnchor('route')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>To inform the route way, use <strong>-r</strong> or <strong>--route</strong>. </p>
+								<p>Please use each name only once.</p>
+								<div class="console">
+									$ basel-crud myCrud -t tableName -c myController -v myView.html -r my-route
+								</div>
+								<p>If you dont inform this value, the console will ask you.</p>
+							</div>
+							<hr>
+							<div id="menu">
+								<h4><strong>Menu</strong> <small><a href="" ng-click="gotoAnchor('menu')"><i class="fa fa-link"></i></a></small> </h4>
+								<p>If this option is used, you CRUD route link will be displayed in the main menu of your application. To do it use <strong>-m</strong> or <strong>--menu</strong>.</p>
+								<div class="console">
+									$ basel-crud myCrud -t tableName -c myController -v myView.html -r my-route --menu
+								</div>
+							</div>
+							<hr>
+							<!-- <div id="table-options">
+								<h3><strong>Table options</strong> <small><a href="" ng-click="gotoAnchor('table-options')"><i class="fa fa-link"></i></a></small> </h3>
+							</div> -->
+							
 						</div><!-- /.box-body -->
 					</div>
 				</div>
