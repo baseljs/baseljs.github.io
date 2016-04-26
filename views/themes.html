@@ -1,0 +1,126 @@
+<div ng-include="'views/header.html'"></div>
+<div class="content-wrapper" ng-init="init()">
+	<div class="container">
+		<section class="content-header">
+			<h1>
+				Themes
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/documentation"><i class="fa fa-file"></i> Documentation</a></li>
+				<li class="active">Themes</li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<div class="box-body">
+							<p><strong>BASEL</strong> supports themes for his applications. You can create your own themes based in <strong>basel-cli</strong>.</p>
+							<hr>
+							<div id="themes">
+								<h3>Existing Themes <small><a href="" ng-click="gotoAnchor('themes')"><i class="fa fa-link"></i></a></small> </h3>
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>How to use</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<a href="https://github.com/baseljs/basel-app">Basic App</a>
+											</td>
+											<td>
+												An basic theme with a top menu and Bootstrap pure.
+											</td>
+											<td>
+												<strong>$ basel-init myApp</strong>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<hr>
+							<div id="create">
+								<h3>Creating Themes <small><a href="" ng-click="gotoAnchor('create')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can create your own themes for <strong>BASEL</strong>. You just need to follow some parameters for the correct operation of applications created from it.</p>
+								<p>To build your new theme, you can use <a href="https://github.com/baseljs/basel-app">that</a> as a base.</p>
+								<hr>
+								<div id="dependencies">
+									<h4><strong>Dependencies</strong> <small><a href="" ng-click="gotoAnchor('dependencies')"><i class="fa fa-link"></i></a></small> </h4>
+									<p>The basic dependencies for a <strong>basel</strong> theme are:</p>
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Dependence</th>
+												<th>Version</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>basel-cli</td>
+												<td>Latest</td>
+											</tr>
+											<tr>
+												<td>electron-prebuilt</td>
+												<td>Latest</td>
+											</tr>
+											<tr>
+												<td>angular</td>
+												<td>Latest</td>
+											</tr>
+											<tr>
+												<td>angular-route</td>
+												<td>Latest</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>Put this in your <strong>package.json</strong>:</p>
+									<div class="console">
+										"dependencies": {<br>
+										&thinsp;&thinsp;"electron-prebuilt": "latest",<br>
+										&thinsp;&thinsp;"basel-cli":"latest",<br>
+										&thinsp;&thinsp;"angular": "latest",<br>
+										&thinsp;&thinsp;"angular-route": "latest"<br>
+										}
+									</div>
+									<p>If you want, you can add others dependencies like <strong>electron-prebuilt</strong> or something else.</p>
+								</div>
+								<hr>
+								<div id="scripts">
+									<h4><strong>Scripts</strong> <small><a href="" ng-click="gotoAnchor('dependencies')"><i class="fa fa-link"></i></a></small> </h4>
+									<p>You need to use a NPM script in your package.json, look:</p>
+									<div class="console">
+										"scripts": {<br>
+										&thinsp;&thinsp; "start": "electron main.js"<br>
+										}
+									</div>
+									<p>If you want, you can add scripts to built your app using <strong>electron-prebuild</strong> or something else.</p>
+								</div>
+								<hr>
+								<div id="basel-cli">
+									<h4><strong>basel-cli</strong> <small><a href="" ng-click="gotoAnchor('basel-cli')"><i class="fa fa-link"></i></a></small> </h4>
+									<p><strong>basel-cli</strong> is a auxiliar module to <strong>BASEL</strong> aps. It provides <strong>routes</strong>, <strong>menus</strong>, <strong>configurations</strong> from <strong>basel.json</strong> and  <strong>database handle</strong>.</p>
+									<strong>Usage</strong>
+									<div class="console">
+										var basel = require('basel-cli');<br>
+										var routes = basel.routes(); // getting routes {JSON Object}<br>
+										var menus = basel.menu(); // getting application's menu {JSON Object} <br>
+										var config = basel.config; // getting app's configuration {JSON Object} <br>
+										basel.database.run("SQL Statement"); // to use database
+									</div>
+									<p>To use more database options <a href="https://github.com/jayralencar/sqlite-sync.js/wiki" target="_blank">look it</a>.</p>
+								</div>
+							</div>
+
+						</div><!-- /.box-body -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /.content-wrapper -->
+<div ng-include="'views/footer.html'"></div>

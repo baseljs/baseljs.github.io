@@ -42,6 +42,11 @@ app.config(function($routeProvider){
 		controller : "documentationController",
 		title: "BASEL - Templates"
 	})
+	.when('/themes',{
+		templateUrl : "views/themes.html",
+		controller : "documentationController",
+		title: "BASEL - Themes"
+	})
 	.when('/contact',{
 		templateUrl : "views/contact.html",
 		title: "BASEL - Contact"
