@@ -113,7 +113,7 @@
 							</div>	
 							<hr>
 							<div id="controller">
-								<h4><strong>Controller</strong> <small><a href="" ng-click="gotoAnchor('table')"><i class="fa fa-link"></i></a></small> </h4>
+								<h4><strong>Controller</strong> <small><a href="" ng-click="gotoAnchor('controller')"><i class="fa fa-link"></i></a></small> </h4>
 								<p>To inform the controller name, use <strong>-c</strong> or <strong>--controller</strong> </p>
 								<div class="console">
 									$ basel-crud myCrud -t tableName -c myController
@@ -151,8 +151,66 @@
 							</div>
 							<hr>
 							<div id="table-options">
-								<h3><strong>Table options</strong> <small><a href="#/database#tables"><i class="fa fa-link"></i></a></small> </h3>
-								<strong>basel-crud</strong> uses the same options of <a href="#/database#tables">basel-database</a> to create tables.
+								<h3><strong>Table options</strong> <small><a href="" ng-click="gotoAnchor('table')"><i class="fa fa-link"></i></a></small> </h3>
+								<p><strong>basel-crud</strong> uses the same options of <a href="#/database#tables">basel-database</a> to create tables, with some changes.</p>
+								<hr>
+								<table class="table table-responsive">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Short</th>
+										<th>Long</th>
+										<th>Description</th>
+										<th>References</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+											<td>
+												Columns
+											</td>
+											<td>-n</td>
+											<td>--columns</td>
+											<td>Table columns. Ex.: -n "id:INTEGERT,name:CHAR(40)"</td>
+											<td>
+												<a href="#/database#columns">Look</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Primary Key
+											</td>
+											<td>-p</td>
+											<td>--pk</td>
+											<td>Table primary key. Ex.: -p id</td>
+											<td>
+												<a href="#/database#pk">Look</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Incremental columns
+											</td>
+											<td>-i</td>
+											<td>--incremental</td>
+											<td>To inform auto incremental columns of table. Ex.: -i id</td>
+											<td>
+												<a href="#/database#incremental">Look</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												References
+											</td>
+											<td>-f</td>
+											<td>--references</td>
+											<td>References of table, foreign key. Ex.: -f "column : table_referenced.column_referenced"</td>
+											<td>
+												<a href="#/database#references">Look</a>
+											</td>
+										</tr>
+								</tbody>
+							</table>
 							</div>
 							
 						</div><!-- /.box-body -->
