@@ -81,3 +81,9 @@ ol li ul li{
 	text-decoration: none;
 	color: #ccc;
 }
+.users-list-name{
+	font-size: 15px;
+}
+.users-list>li{
+	width: 20% !important;
+}

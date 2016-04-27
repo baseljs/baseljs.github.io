@@ -127,20 +127,41 @@
   <div class="container">
     <br>
     <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Powered by</h1>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Powered by</h2>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <a href="//clubedosgeeks.com.br" target="_blank">
+              <img src="dist/img/cdg.png" class="img-responsive">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Contributors</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="users-list clearfix">
+              <li ng-repeat="person in contributors">
+                <img src="{{person.avatar_url}}" alt="User Image">
+                <a class="users-list-name" target="_blank" href="{{person.html_url}}">@{{person.login}}</a>
+                <span class="users-list-date">{{person.contributions}} contributions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-md-3 text-center">
-        <a href="//clubedosgeeks.com.br" target="_blank">
-          <img src="dist/img/cdg.png" class="img-responsive">
-        </a>
-      </div>
-      <div class="col-md-3 text-center">
-      </div>
-    </div>
+    
     <br>
     <br>
   </div>

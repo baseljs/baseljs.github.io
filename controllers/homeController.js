@@ -9,6 +9,11 @@ app.controller("homeController", function($scope, $location, githubService, npmS
 			$scope.releases = data;
 			$scope.latest = data[0];
 		});
+
+		githubService.contributors().success(function(data){
+			$scope.contributors = data;
+		});
+
 		npmService.get().success(function(data){
 			$scope.npm = data;
 		});

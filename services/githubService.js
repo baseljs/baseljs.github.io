@@ -8,8 +8,13 @@ app.factory("githubService", function($http){
 		return $http.get('https://api.github.com/repos/baseljs/basel/releases');
 	}
 
+	var __contributors = function(){
+		return $http.get('https://api.github.com/repos/baseljs/basel/contributors');
+	}
+
 	return {
 		repo: __repo,
-		releases: __releases
+		releases: __releases,
+		contributors: __contributors
 	};
 });
