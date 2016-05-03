@@ -101,6 +101,15 @@
 										<td></td>
 										<td>URL of Git repository</td>
 									</tr>
+									<tr>
+										<td>
+											<a href="" ng-click="gotoAnchor('base')" >Base</a>
+										</td>
+										<td>-b</td>
+										<td>--base</td>
+										<td></td>
+										<td>Base app or base theme for your new BASEL app.</td>
+									</tr>
 								</tbody>
 							</table>
 							<hr>
@@ -189,6 +198,15 @@
 								</div>
 							</div>
 							<!-- /. Url -->
+							<!-- Base -->
+							<div id="base">
+								<h3>Base <small><a href="" ng-click="gotoAnchor('base')"><i class="fa fa-link"></i></a></small> </h3>
+								<p>You can use base themes for build your applications. See the <a href="#/themes">list</a>. Use <strong>-b</strong> or <strong>--base</strong></p>
+								<div class="console">
+									$ basel-init myApp -b tabs // or --base<br>
+								</div>
+							</div>
+							<!-- ./ Base -->
 							<hr>
 							<a href="#/documentation"><h4>Keep going</h4></a>
 						</div><!-- /.box-body -->
