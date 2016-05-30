@@ -62,7 +62,7 @@ app.config(function($routeProvider){
 	;
 });
 
-app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
+app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory) {
 	var ngProgress = ngProgressFactory.createInstance();
 	$rootScope.$on('$routeChangeStart', function() {
 		ngProgress.setColor('blue');
@@ -72,6 +72,9 @@ app.run(function($rootScope,$anchorScroll, ngProgressFactory) {
 	$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
 		document.title = current.$$route.title;
 	    ngProgress.complete();
+	    $window.ga('send', 'pageview', {
+            page: $location.path()
+        });
 	});
 });
 
